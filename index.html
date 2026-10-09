@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#06101f">
+<meta name="description" content="Mohamed Ashraf Abubakr — Networking Portfolio">
+<title>Mohamed Ashraf | Networking Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+<style>
+:root{--bg:#06101f;--panel:#081a30;--blue:#16a9ff;--cyan:#00e5ff;--text:#f3f8ff;--muted:#a6bad0;--line:#0877bd66;--font:"Space Grotesk",sans-serif}
+*{box-sizing:border-box;margin:0;padding:0;scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:Inter,Arial,sans-serif;overflow-x:hidden;line-height:1.65}
+body:before{content:"";position:fixed;inset:0;z-index:-3;background:radial-gradient(ellipse at 22% 12%,#073a6b 0,transparent 38%),radial-gradient(ellipse at 88% 40%,#062c48 0,transparent 32%),#06101f}
+a{color:inherit;text-decoration:none}button{font:inherit}
+.container{width:min(1120px,90%);margin:auto}
+.navbar{position:fixed;z-index:99;inset:0 0 auto;background:#06101fe8;backdrop-filter:blur(16px);border-bottom:1px solid #1686c655}
+.nav-inner{height:64px;display:flex;align-items:center;justify-content:space-between;gap:22px}
+.logo{font:700 23px var(--font);letter-spacing:-1.4px}.logo span{color:var(--cyan)}
+.nav-links{display:flex;align-items:center;gap:31px;list-style:none}
+.nav-links a{font-size:12px;color:#d5e4f5;transition:.25s}.nav-links a:hover,.nav-links a.active{color:var(--cyan)}
+.nav-links a.active{border-bottom:2px solid var(--cyan);padding-bottom:7px}
+.nav-cta{border:1px solid var(--cyan);border-radius:24px;padding:7px 14px;font-size:11px;white-space:nowrap}
+.menu-btn{display:none;background:none;border:0;color:white;font-size:25px}
+.hero{min-height:400px;padding-top:98px;padding-bottom:25px;display:grid;grid-template-columns:.9fr 1.1fr;align-items:center;gap:30px;position:relative}
+.hero:before{content:"";position:absolute;inset:64px -7vw 0;z-index:-1;opacity:.55;background-image:radial-gradient(circle,#098bff 1px,transparent 1.7px),linear-gradient(120deg,transparent 49.8%,#0877bd30 50%,transparent 50.2%);background-size:45px 45px,100px 100px;mask-image:linear-gradient(90deg,#000,transparent 92%)}
+.eyebrow{font:600 10px var(--font);letter-spacing:1.5px;color:var(--cyan);text-transform:uppercase;display:flex;align-items:center;gap:9px;margin-bottom:14px}
+.dot{width:8px;height:8px;border-radius:50%;background:#43e99a;box-shadow:0 0 12px #43e99a}
+h1,h2,h3{font-family:var(--font)}
+.hero h1{font-size:clamp(42px,5.4vw,66px);line-height:.98;letter-spacing:-2.5px;margin-bottom:14px}
+.gradient{background:linear-gradient(100deg,#14b6ff,#00edff);background-clip:text;-webkit-background-clip:text;color:transparent}
+.hero h2{font-size:19px;margin-bottom:7px}.hero p{color:#c3d3e5;font-size:12px;line-height:1.75;max-width:430px}
+.actions{display:flex;gap:11px;flex-wrap:wrap;margin-top:20px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:10px 17px;border-radius:25px;font-size:11px;font-weight:700;border:1px solid var(--cyan);transition:.25s;cursor:pointer}
+.btn:hover{transform:translateY(-3px);box-shadow:0 0 25px #00dfff33}
+.primary{background:linear-gradient(100deg,#09b6ef,#00d7ef);color:#041321;border-color:transparent}
+.socials{display:flex;gap:19px;margin-top:17px}.socials a{font-size:19px;color:#e8f7ff;transition:.25s}.socials a:hover{color:var(--cyan);transform:translateY(-3px)}
+.visual{position:relative;min-height:310px;display:flex;align-items:center;justify-content:center}
+.portrait-frame{position:relative;z-index:2;width:240px;height:300px;padding:5px;border-radius:17px;border:2px solid #09baff;box-shadow:0 0 28px #009dff70,0 0 80px #007bff22;transform:translateX(-48px);background:#0a2440}
+.portrait{width:100%;height:100%;object-fit:cover;object-position:center 52%;border-radius:11px;display:block}
+.globe{position:absolute;width:270px;height:270px;right:2%;top:18px;opacity:.9;filter:drop-shadow(0 0 14px #008cff66)}
+.globe circle,.globe path{stroke:#078ff5;stroke-width:1;fill:none}.globe .bright{stroke:#00e5ff;stroke-width:1.5}
+.float-card{position:absolute;z-index:3;bottom:24px;left:0;display:flex;align-items:center;gap:13px;padding:11px 14px;background:#07182bf2;border:1px solid var(--cyan);border-radius:12px;box-shadow:0 0 25px #00bfff2b;animation:float 4s ease-in-out infinite}
+.float-card i{font-size:26px;color:var(--cyan)}.float-card strong{display:block;font-size:11px}.float-card small{font-size:9px;color:var(--muted)}
+.float-icon{position:absolute;top:8px;left:47%;z-index:4;width:48px;height:48px;display:grid;place-items:center;border-radius:50%;font-size:23px;color:var(--cyan);background:#061a30;border:1px solid var(--cyan);box-shadow:0 0 22px #00dfff55;animation:float 3.5s infinite}
+.hand-note{position:absolute;right:-1%;bottom:63px;color:#9deaff;font:italic 16px var(--font);transform:rotate(-8deg);text-align:center}
+section{padding:48px 0;border-top:1px solid #0785c544;scroll-margin-top:65px}
+.section-row{display:grid;grid-template-columns:.8fr 2.2fr;gap:26px;align-items:center}
+.section-head .eyebrow{margin-bottom:7px}.section-head h2{font-size:25px;line-height:1.15;letter-spacing:-.7px}.section-head p{font-size:11px;color:var(--muted);margin-top:9px;max-width:270px}
+.about-cards{display:grid;grid-template-columns:1fr 1fr;gap:15px}
+.panel,.skill-card{background:linear-gradient(140deg,#0b2038eF,#06172beF);border:1px solid #087cc066;border-radius:12px;padding:20px;transition:.3s}
+.panel:hover,.skill-card:hover,.tool:hover,.project:hover{border-color:#00dfff;transform:translateY(-4px);box-shadow:0 10px 30px #0003}
+.panel h3{font-size:13px;margin-bottom:9px}.panel p{font-size:10px;color:#b9cbe0;line-height:1.8}
+.panel-top{display:flex;gap:12px;align-items:center;margin-bottom:8px}.panel-top i{font-size:24px;color:var(--cyan)}
+.focus-list{list-style:none;display:grid;gap:5px}.focus-list li{font-size:10px;color:#c8d8e8}.focus-list i{color:var(--cyan);margin-right:7px}
+.skills-layout{display:grid;grid-template-columns:.75fr 2.25fr;gap:26px;align-items:center}
+.skills-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:13px}
+.skill-card{padding:17px}.skill-card>i{font-size:25px;color:var(--cyan)}.skill-card h3{font-size:12px;margin:7px 0 12px}
+.tags{display:flex;flex-wrap:wrap;gap:5px}.tag{font-size:9px;padding:4px 7px;border-radius:7px;color:#d2e8ff;background:#0a3760;border:1px solid #17629a}
+.tools-layout{display:grid;grid-template-columns:.75fr 2.25fr;gap:26px;align-items:center}
+.tools-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:9px}
+.tool{min-height:75px;padding:10px 5px;border:1px solid #087cc066;border-radius:10px;background:#081b30;text-align:center;font-size:10px;color:#d6e7f7;transition:.3s;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:7px}
+.tool i{font-size:24px;color:var(--cyan)}
+.project-layout{display:grid;grid-template-columns:1.1fr .9fr;gap:20px;align-items:center}
+.project{border:1px solid #087cc066;background:linear-gradient(140deg,#0b2038,#06172b);border-radius:14px;overflow:hidden;transition:.3s}
+.project-art{height:165px;background:radial-gradient(ellipse at center,#0b4775,transparent 70%),#07182b;display:grid;place-items:center}
+.project-art svg{width:90%;height:145px}
+.project-body{padding:18px}.project-label{color:var(--cyan);font-size:9px;letter-spacing:1px}.project h3{font-size:18px;margin:7px 0}.project p{color:var(--muted);font-size:11px;line-height:1.8}.project .tags{margin-top:13px}
+.project-note{color:var(--muted);font-size:12px}.project-note h3{color:var(--text);font-size:20px;margin-bottom:10px}.project-note i{color:var(--cyan)}
+.contact{padding:36px 0}.contact-box{padding:32px 22px;text-align:center;border:1px solid #087cc077;border-radius:15px;background:radial-gradient(ellipse at top,#10466a80,transparent 70%),#08192b}
+.contact-box h2{font-size:clamp(25px,4vw,36px);margin-bottom:7px}.contact-box p{font-size:11px;color:var(--muted);margin:0 auto 18px;max-width:520px}.contact-actions{display:flex;justify-content:center;gap:10px;flex-wrap:wrap}
+footer{border-top:1px solid #087cc055;padding:15px 0;color:#91a8c0;font-size:10px}.footer-inner{display:flex;justify-content:space-between;gap:12px;align-items:center;flex-wrap:wrap}
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .65s ease,transform .65s ease}.reveal.visible{opacity:1;transform:translateY(0)}
+@keyframes float{0%,100%{translate:0 0}50%{translate:0 -9px}}
+@media(max-width:800px){.nav-links{gap:15px}.nav-cta{display:none}.hero{grid-template-columns:1fr .9fr;gap:10px}.portrait-frame{width:205px;height:270px;transform:translateX(-20px)}.globe{width:220px;height:220px;right:-4%}.hand-note{display:none}.section-row,.skills-layout,.tools-layout{grid-template-columns:1fr;gap:18px}.section-head p{max-width:500px}.skills-grid{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:600px){.nav-inner{height:60px}.menu-btn{display:block}.nav-links{display:none;position:absolute;top:60px;left:0;right:0;background:#061321f7;border-bottom:1px solid var(--line);padding:14px 5%;flex-direction:column;align-items:stretch;gap:0}.nav-links.open{display:flex}.nav-links a{display:block;padding:10px 0}.hero{grid-template-columns:1fr;text-align:center;padding-top:94px;padding-bottom:35px;gap:22px}.hero:before{inset:60px -7vw 0}.hero p{margin:auto}.eyebrow{justify-content:center}.hero h1{font-size:52px}.actions,.socials{justify-content:center}.visual{min-height:310px;max-width:390px;width:100%;margin:auto}.portrait-frame{width:220px;height:275px;transform:translateX(-22px)}.globe{width:230px;height:230px;right:-1%;top:20px}.float-card{left:0;bottom:12px}.float-icon{left:57%;top:5px}.section-row,.skills-layout,.tools-layout,.project-layout{grid-template-columns:1fr;gap:22px}section{padding:38px 0}.section-head{text-align:center}.section-head .eyebrow{justify-content:center}.section-head p{margin:8px auto 0}.about-cards{grid-template-columns:1fr}.skills-grid{grid-template-columns:1fr}.tools-grid{grid-template-columns:repeat(2,1fr)}.project-art{height:150px}.project-note{padding:5px}.contact{padding:32px 0}.footer-inner{justify-content:center;text-align:center}.footer-inner p{width:100%}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<header class="navbar">
+  <div class="container nav-inner">
+    <a class="logo" href="#home">MA<span>.</span></a>
+    <button class="menu-btn" id="menuBtn" aria-label="Toggle navigation" aria-expanded="false"><i class="bi bi-list"></i></button>
+    <ul class="nav-links" id="navLinks">
+      <li><a class="active" href="#home">Home</a></li><li><a href="#about">About</a></li><li><a href="#skills">Skills</a></li><li><a href="#tools">Tools</a></li><li><a href="#projects">Projects</a></li><li><a href="#contact">Contact</a></li>
+    </ul>
+    <a class="nav-cta" href="#contact">Let's Connect&nbsp; <i class="bi bi-arrow-right"></i></a>
+  </div>
+</header>
+<main>
+<section class="container hero" id="home">
+  <div class="reveal">
+    <div class="eyebrow"><span class="dot"></span> NETWORKING & INFRASTRUCTURE</div>
+    <h1>Mohamed<br><span class="gradient">Ashraf.</span></h1>
+    <h2>Networking Enthusiast</h2>
+    <p>Passionate about network infrastructure, routing, switching, and building reliable network environments. Exploring networking technologies through practical simulation and hands-on learning.</p>
+    <div class="actions"><a class="btn primary" href="#projects">Explore My Work <i class="bi bi-arrow-right"></i></a><a class="btn" href="#contact">Get In Touch <i class="bi bi-envelope"></i></a></div>
+    <div class="socials"><a href="#contact" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a><a href="tel:+201013914095" aria-label="Call"><i class="bi bi-telephone-fill"></i></a><a href="#contact" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a><a href="#projects" aria-label="GitHub"><i class="bi bi-github"></i></a></div>
+  </div>
+  <div class="visual reveal">
+    <svg class="globe" viewBox="0 0 260 260" aria-hidden="true">
+      <circle cx="130" cy="130" r="103"/><ellipse cx="130" cy="130" rx="48" ry="103"/><ellipse cx="130" cy="130" rx="82" ry="103"/><ellipse cx="130" cy="130" rx="103" ry="36"/><ellipse cx="130" cy="130" rx="103" ry="70"/>
+      <path d="M27 130L64 91 100 115 130 55 167 100 204 83 233 130 198 170 165 149 130 205 90 165 54 183Z"/>
+      <path class="bright" d="M64 91L100 115 130 55 167 100 204 83M54 183L90 165 130 205 165 149 198 170"/>
+      <g fill="#00e5ff"><circle cx="64" cy="91" r="3"/><circle cx="100" cy="115" r="3"/><circle cx="130" cy="55" r="3"/><circle cx="167" cy="100" r="3"/><circle cx="204" cy="83" r="3"/><circle cx="54" cy="183" r="3"/><circle cx="90" cy="165" r="3"/><circle cx="130" cy="205" r="3"/><circle cx="165" cy="149" r="3"/><circle cx="198" cy="170" r="3"/></g>
+    </svg>
+  
+    <div class="float-icon"><i class="bi bi-router"></i></div>
+    <div class="float-card"><i class="bi bi-diagram-3"></i><div><strong>Network Design</strong><small>Cisco Packet Tracer Project</small></div></div>
+    <div class="hand-note">Networks<br>Connect<br>People ↗</div>
+  </div>
+</section>
+<section id="about"><div class="container section-row">
+  <div class="section-head reveal"><div class="eyebrow">01 — ABOUT ME</div><h2>Building Connections.<br>Solving <span class="gradient">Problems.</span></h2><p>Interested in how networks communicate, operate, and connect systems together.</p>
+    <div class="focus-list" style="margin-top:16px"><li><i class="bi bi-person"></i> Name: Mohamed Ashraf Abubakr</li><li><i class="bi bi-telephone"></i> Phone: 01013914095</li><li><i class="bi bi-geo-alt"></i> Location: Egypt</li></div>
+  </div>
+  <div class="about-cards">
+    <article class="panel reveal"><div class="panel-top"><i class="bi bi-person-badge"></i><h3>Who I Am</h3></div><p>I'm Mohamed Ashraf Abubakr, a networking enthusiast developing practical knowledge in routing, switching, network security, IP addressing, and network infrastructure.</p></article>
+    <article class="panel reveal"><div class="panel-top"><i class="bi bi-clipboard2-check"></i><h3>Areas of Focus</h3></div><ul class="focus-list"><li><i class="bi bi-check-lg"></i> Routing & Switching Fundamentals</li><li><i class="bi bi-check-lg"></i> Network Segmentation & VLANs</li><li><i class="bi bi-check-lg"></i> Network Security & Troubleshooting</li><li><i class="bi bi-check-lg"></i> Windows Server Management</li><li><i class="bi bi-check-lg"></i> Cisco Packet Tracer Simulation</li></ul></article>
+  </div>
+</div></section>
+<section id="skills"><div class="container skills-layout">
+  <div class="section-head reveal"><div class="eyebrow">02 — TECHNICAL SKILLS</div><h2>My Technical <span class="gradient">Toolkit</span></h2><p>Networking concepts and technologies I'm learning and practicing.</p></div>
+  <div class="skills-grid">
+    <article class="skill-card reveal"><i class="bi bi-diagram-3"></i><h3>Routing & Switching</h3><div class="tags"><span class="tag">Routing</span><span class="tag">Switching</span><span class="tag">OSPF</span><span class="tag">EIGRP</span><span class="tag">STP / RSTP</span><span class="tag">EtherChannel</span><span class="tag">HSRP</span><span class="tag">NAT / PAT</span></div></article>
+    <article class="skill-card reveal"><i class="bi bi-gear"></i><h3>Network Configuration</h3><div class="tags"><span class="tag">Subnetting</span><span class="tag">IP Addressing</span><span class="tag">VLANs</span><span class="tag">Trunking</span><span class="tag">Inter-VLAN Routing</span><span class="tag">ROAS</span><span class="tag">DHCP Snooping</span><span class="tag">ARP Inspection</span></div></article>
+    <article class="skill-card reveal"><i class="bi bi-shield-check"></i><h3>Security & Systems</h3><div class="tags"><span class="tag">Port Security</span><span class="tag">AAA</span><span class="tag">TCP/IP</span><span class="tag">OSI Model</span><span class="tag">Windows Server</span></div></article>
+  </div>
+</div></section>
+<section id="tools"><div class="container tools-layout">
+  <div class="section-head reveal"><div class="eyebrow">03 — TOOLS & ENVIRONMENTS</div><h2>Tools I <span class="gradient">Work With</span></h2><p>Software and environments used for networking practice and analysis.</p></div>
+  <div class="tools-grid reveal"><div class="tool"><i class="bi bi-diagram-3"></i>Cisco Packet Tracer</div><div class="tool"><i class="bi bi-terminal"></i>Kali Linux</div><div class="tool"><i class="bi bi-ubuntu"></i>Ubuntu</div><div class="tool"><i class="bi bi-activity"></i>Wireshark</div><div class="tool"><i class="bi bi-router"></i>Winbox</div></div>
+</div></section>
+<section id="projects"><div class="container project-layout">
+  <article class="project reveal"><div class="project-art"><svg viewBox="0 0 440 150" xmlns="http://www.w3.org/2000/svg"><g stroke="#08dfff" stroke-width="1.5" fill="none"><path d="M90 38V65H220V43M350 38V65H220M220 43V100H90V118M220 100H350V118"/><path d="M90 118H350" stroke-dasharray="4 5"/></g><g fill="#0c3150" stroke="#078fe5"><rect x="48" y="17" width="84" height="24" rx="6"/><rect x="308" y="17" width="84" height="24" rx="6"/><rect x="178" y="22" width="84" height="25" rx="6"/><rect x="48" y="108" width="84" height="23" rx="5"/><rect x="308" y="108" width="84" height="23" rx="5"/></g><g fill="#eafaff" font-family="Arial" font-size="9" text-anchor="middle"><text x="90" y="32">BUILDING A</text><text x="350" y="32">BUILDING B</text><text x="220" y="38">NETWORK</text><text x="90" y="123">DEVICES</text><text x="350" y="123">DEVICES</text></g><g fill="#00e5ff"><circle cx="90" cy="29" r="3"/><circle cx="350" cy="29" r="3"/><circle cx="220" cy="34" r="3"/></g></svg></div><div class="project-body"><span class="project-label">SELECTED PROJECT · NETWORK SIMULATION</span><h3>Two-Building Network Design</h3><p>Designed a simulated network connecting two buildings using Cisco Packet Tracer. The project included network devices and connectivity testing to evaluate communication between the connected environments.</p><div class="tags"><span class="tag">Cisco Packet Tracer</span><span class="tag">Network Topology</span><span class="tag">Connectivity Testing</span></div></div></article>
+  <div class="project-note reveal"><div class="eyebrow">04 — SELECTED PROJECT</div><h3>Designed to Connect.<br><span class="gradient">Built to Communicate.</span></h3><p>A practical network simulation focused on linking two separate buildings and testing connectivity between network devices.</p><p style="margin-top:14px"><i class="bi bi-check-circle"></i> Network devices configured in a simulation<br><i class="bi bi-check-circle"></i> Connectivity tested in Packet Tracer</p></div>
+</div></section>
+<section class="contact" id="contact"><div class="container"><div class="contact-box reveal"><div class="eyebrow" style="justify-content:center">05 — CONTACT</div><h2>Let's Connect & <span class="gradient">Collaborate.</span></h2><p>Interested in networking, infrastructure, or exchanging technical knowledge? Feel free to reach out.</p><div class="contact-actions"><a class="btn primary" href="https://wa.me/201013914095" target="_blank" rel="noopener noreferrer"><i class="bi bi-whatsapp"></i> WhatsApp</a><a class="btn" href="tel:+201013914095"><i class="bi bi-telephone"></i> Call Me</a><button class="btn" id="copyPhone"><i class="bi bi-copy"></i> Copy Number</button></div><p id="copyStatus" role="status" aria-live="polite" style="margin:12px auto 0"></p></div></div></section>
+</main>
+<footer><div class="container footer-inner"><a class="logo" href="#home">MA<span>.</span></a><span>Designed with purpose. Built around connectivity.</span><span>© <span id="year"></span> Mohamed Ashraf Abubakr</span></div></footer>
+<script>
+const menuBtn=document.getElementById("menuBtn"),navLinks=document.getElementById("navLinks");
+menuBtn.addEventListener("click",()=>{const open=navLinks.classList.toggle("open");menuBtn.setAttribute("aria-expanded",String(open));menuBtn.innerHTML=open?'<i class="bi bi-x-lg"></i>':'<i class="bi bi-list"></i>'});
+document.querySelectorAll("#navLinks a").forEach(a=>a.addEventListener("click",()=>{navLinks.classList.remove("open");menuBtn.setAttribute("aria-expanded","false");menuBtn.innerHTML='<i class="bi bi-list"></i>';document.querySelectorAll("#navLinks a").forEach(x=>x.classList.remove("active"));a.classList.add("active")}));
+const observer=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add("visible");observer.unobserve(e.target)}}),{threshold:.12});
+document.querySelectorAll(".reveal").forEach(el=>observer.observe(el));
+document.getElementById("year").textContent=new Date().getFullYear();
+document.getElementById("copyPhone").addEventListener("click",async()=>{const s=document.getElementById("copyStatus");try{await navigator.clipboard.writeText("01013914095");s.textContent="Phone number copied successfully."}catch{s.textContent="Copy unavailable. Number: 01013914095"}});
+</script>
+</body>
+</html>
